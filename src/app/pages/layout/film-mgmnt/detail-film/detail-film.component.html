@@ -1,0 +1,32 @@
+<nb-card>
+    <nb-card-header>
+        <p>Film est :</p>
+    </nb-card-header>
+    <nb-card-body>
+        <div *ngIf="films">
+            <table>
+                <tr>
+                    <td>Titre Film </td>
+                    <td>:</td>
+                    <td>{{films.title}}</td>
+                </tr>
+                <tr>
+                    <td>Réalisateur </td>
+                    <td>:</td>
+                    <td>{{films.realisateur}}</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>:</td>
+                    <td>{{films.type}}</td>
+                </tr>
+                <tr>
+                    <td>Date realise </td>
+                    <td>:</td>
+                    <td>{{films.releaseDate}}</td>
+                </tr>
+            </table>
+
+        </div>
+    </nb-card-body>
+</nb-card>
