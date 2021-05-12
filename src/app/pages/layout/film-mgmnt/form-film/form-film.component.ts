@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NbComponentStatus } from '@nebular/theme';
+import { auteur } from '../../../../models/auteur';
 import { films } from '../../../../models/films';
+import { type } from '../../../../models/type';
+import { AuteurService } from '../../../../utils/services/auteur.service';
 import { FilmsService } from '../../../../utils/services/films.service';
+import { TypeService } from '../../../../utils/services/type.service';
 
 @Component({
   selector: 'ngx-form-film',
@@ -21,11 +25,31 @@ export class FormFilmComponent implements OnInit {
   statuses2: NbComponentStatus[] = ['warning'];
   statuses3: NbComponentStatus[] = ['danger'];
   statuses4: NbComponentStatus[] = ['info'];
+  auteur: auteur[] = [];
+  type: type[] = [];
 
-  constructor(private formBuilder: FormBuilder, private filmsService: FilmsService,private r : Router) { }
+  constructor(private auteurService : AuteurService,private typeService :TypeService,
+    private formBuilder: FormBuilder, private filmsService: FilmsService,private r : Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
 
+    this.auteurService.getlistAuteur().subscribe(
+      res => {
+        // Swal.fire('This is a simple and sweet alert')
+        console.log(res);
+        this.auteur = res;
+        console.log(res);
+
+      });
+
+      this.typeService.getlistType().subscribe(
+        res => {
+          // Swal.fire('This is a simple and sweet alert')
+          console.log(res);
+          this.type = res;
+          console.log(res);
+  
+        });
     this.registerForm = this.formBuilder.group({
       title: ['', Validators.required],
       type: ['', Validators.required],

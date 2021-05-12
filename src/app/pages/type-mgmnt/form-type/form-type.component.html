@@ -1,0 +1,70 @@
+<!-- main app container -->
+<div class="card m-3">
+    <h5 class="card-header">Add a new Type</h5>
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+
+                <div class="form-group col-5">
+                    <label>Type</label>
+                    <input type="text" formControlName="nom" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" [(ngModel)]="u.nom" />
+                    <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                        <div *ngIf="f.nom.errors.required">First name film is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group col-5">
+                    <label>Level </label>
+                    <input type="number" formControlName="niveau" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.niveau.errors }" [(ngModel)]="u.niveau" />
+                    <div *ngIf="submitted && f.niveau.errors" class="invalid-feedback">
+                        <div *ngIf="f.niveau.errors.required"> Lavel film is required</div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
+                    [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required
+                </div>
+            </div>
+            <nb-card-body>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="buttons-row">
+                                <button *ngFor="let status of statuses" nbButton [status]="status" outline>
+                                    Register
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="buttons-row">
+                                <button *ngFor="let status of statuses2" nbButton [status]="status" outline
+                                    (click)="onReset()">
+                                    Cancel
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="buttons-row">
+                                <button *ngFor="let status of statuses3" nbButton [status]="status" outline
+                                    (click)="Retour()">
+                                    Retour
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </nb-card-body>
+
+        </form>
+    </div>
+</div>

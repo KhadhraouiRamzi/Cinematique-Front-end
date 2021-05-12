@@ -8,7 +8,6 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
-import { AuthGuardService } from './security/auth-guard.service';
 import { LoginsComponent } from './logins/logins.component'
 import { AuthComponent } from './auth/auth.component';
 

@@ -1,6 +1,6 @@
 <nb-card>
     <nb-card-header>
-        <p>Film est :</p>
+        <p>Film :</p>
     </nb-card-header>
     <nb-card-body>
         <div *ngIf="films">
@@ -13,12 +13,12 @@
                 <tr>
                     <td>Réalisateur </td>
                     <td>:</td>
-                    <td>{{films.realisateur}}</td>
+                    <td>{{films.auteur.nom}} {{films.auteur.prenom}}</td>
                 </tr>
                 <tr>
                     <td>Type</td>
                     <td>:</td>
-                    <td>{{films.type}}</td>
+                    <td>{{films.type.nom}}</td>
                 </tr>
                 <tr>
                     <td>Date realise </td>

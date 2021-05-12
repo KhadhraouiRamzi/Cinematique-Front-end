@@ -1,57 +1,34 @@
 <nb-card>
     <nb-card-header>
-        Edit Film
+        Edit Type
     </nb-card-header>
     <nb-card-body>
-
+  
         <nb-card>
             <nb-card-header>
                 <div class="buttons-row">
                     <div class="form-row">
-
+  
                         <div class="col-md-6" *ngIf="u">
-                            <table width=180%>
+                            <table width=180% >
                                 <tr>
                                     <td>
                                         <div>
-                                            <label for="firstName">Nom film:</label>
-                                            <input type="text" class="form-control" [(ngModel)]="u.title" />
+                                            <label for="nom">Type:</label>
+                                            <input type="text" class="form-control" [(ngModel)]="u.nom" />
                                         </div>
                                     </td>
+                              
                                     <td>
-
+  
                                         <div>
-                                            <label for="lastName">Réalisateur:</label>
-                                            <select class="form-control" name="auteur" [(ngModel)]="u.auteur.id">
-                                                <option *ngFor="let d of auteur" [ngValue]="d.id">{{ d.nom }}
-                                                    {{d.prenom}}
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-
-                                    <td>
-
-                                        <div>
-                                            <label for="firstName">Date Release:</label>
-                                            <input type="text" class="form-control" [(ngModel)]="u.releaseDate" />
-                                        </div>
-                                    </td>
-                                    <td>
-
-                                        <div>
-                                            <label for="lastName">Type:</label>
-                                            <select class="form-control" name="type" [(ngModel)]="u.type.id">
-                                                <option *ngFor="let d of type" [ngValue]="d.id">{{ d.nom }}
-                                                </option>
-                                            </select>
+                                            <label for="niveau">Level:</label>
+                                            <input type="number" class="form-control" [(ngModel)]="u.niveau" />
                                         </div>
                                     </td>
                                 </tr>
                             </table>
-
+  
                         </div>
                     </div>
                 </div>
@@ -78,9 +55,9 @@
                         </td>
                     </tr>
                 </table>
-
+  
             </nb-card-body>
         </nb-card>
-
+  
     </nb-card-body>
-</nb-card>
+  </nb-card>

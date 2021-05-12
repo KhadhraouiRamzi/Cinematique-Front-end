@@ -7,11 +7,20 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/dashboard',
     home: true,
   },
-
-   {
+  {
     title: 'Films',
     icon: 'film-outline',
     link: '/pages/layout/list-Film',
+  },
+   {
+    title: 'Director',
+    icon: 'person-outline',
+    link: '/pages/list-auteur',
+  },
+  {
+    title: 'Type',
+    icon: 'options-2-outline',
+    link: '/pages/list-type',
   },
  /* {
     title: 'IoT Dashboard',
@@ -73,7 +82,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'UI Features',
     icon: 'keypad-outline',
-    link: '/pages/ui-features',
+    link: '/pages/ui-features/Icons',
     children: [
       {
         title: 'Grid',

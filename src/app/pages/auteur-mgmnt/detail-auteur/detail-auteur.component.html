@@ -1,0 +1,27 @@
+<nb-card>
+    <nb-card-header>
+        <p>Director :</p>
+    </nb-card-header>
+    <nb-card-body>
+        <div *ngIf="auteur">
+            <table>
+                <tr>
+                    <td>First name</td>
+                    <td>:</td>
+                    <td>{{auteur.nom}}</td>
+                </tr>
+                <tr>
+                    <td>Last name </td>
+                    <td>:</td>
+                    <td>{{auteur.prenom}}</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>:</td>
+                    <td>{{auteur.age}}</td>
+                </tr>
+            </table>
+
+        </div>
+    </nb-card-body>
+</nb-card>

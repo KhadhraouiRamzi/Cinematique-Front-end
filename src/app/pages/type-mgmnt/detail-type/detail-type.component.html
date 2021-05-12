@@ -1,0 +1,22 @@
+<nb-card>
+    <nb-card-header>
+        <p>type :</p>
+    </nb-card-header>
+    <nb-card-body>
+        <div *ngIf="type">
+            <table>
+                <tr>
+                    <td>Type</td>
+                    <td>:</td>
+                    <td>{{type.nom}}</td>
+                </tr>
+                <tr>
+                    <td>level</td>
+                    <td>:</td>
+                    <td>{{type.niveau}}</td>
+                </tr>
+            </table>
+
+        </div>
+    </nb-card-body>
+</nb-card>
